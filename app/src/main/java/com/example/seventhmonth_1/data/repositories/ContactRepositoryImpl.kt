@@ -1,26 +1,106 @@
 package com.example.seventhmonth_1.data.repositories
 
-import com.example.seventhmonth_1.data.lokal.ContactDao
-import com.example.seventhmonth_1.data.models.ContactEntity
+import com.example.seventhmonth_1.data.lokal.MovieDao
+import com.example.seventhmonth_1.data.mappers.toEntity
+import com.example.seventhmonth_1.data.models.MovieEntity
 import com.example.seventhmonth_1.domain.repositories.ContactRepository
+import com.example.seventhmonth_1.domain.utils.Resource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 
-class ContactRepositoryImpl(
-    private val contactDao:ContactDao
+
+import javax.inject.Inject
+
+class ContactRepositoryImpl @Inject constructor(
+    private val movieDao: MovieDao
 ) : ContactRepository {
+    override fun addMovie(movieEntity: MovieEntity): Flow<Resource<Unit>> {
+        return flow {
+         emit(Resource.Loading())
+            try {
+                val data = movieDao.addMovie(movieEntity.toEntity())
+                emit(Resource.Success(data))
+            } catch (e: Exception) {
+                emit(Resource.Error(e.localizedMessage?: "unknown error")
+                )
+            }
+        }.flowOn(Dispatchers.IO)
 
-    override fun addContact(contactEntity: ContactEntity) {
-        contactDao.addContact(contactEntity)
     }
 
-    override fun getContact(): List<ContactEntity> {
-     return contactDao.getContact()
+    override fun getMovie(): Flow<Resource<List<MovieEntity>>> {
+        return flow {
+            emit(Resource.Loading())
+            try {
+                val data = movieDao.getMovie()
+                emit(Resource.Success(data))
+            } catch (e: Exception) {
+                emit(Resource.Error(e.localizedMessage?: "unknown error")
+                )
+            }
+        }.flowOn(Dispatchers.IO)
+
     }
 
-    override fun updateContact(contactEntity: ContactEntity) {
-          contactDao.updateContact(contactEntity)
+    override fun getMovieByPerfomer(): Flow<Resource<List<MovieEntity>>> {
+        return flow {
+            emit(Resource.Loading())
+            try {
+                val data = movieDao.getMovieByPerfomer()
+                emit(Resource.Success(data))
+            } catch (e: Exception) {
+                emit(Resource.Error(e.localizedMessage?: "unknown error")
+                )
+            }
+        }.flowOn(Dispatchers.IO)
+
     }
 
-    override fun deleteContact(contactEntity: ContactEntity) {
-           contactDao.deleteContact(contactEntity)
+    override fun getMovieByDuration(): Flow<Resource<List<MovieEntity>>> {
+        return flow {
+            emit(Resource.Loading())
+            try {
+                val data = movieDao.getMovieByDuration()
+                emit(Resource.Success(data))
+            } catch (e: Exception) {
+                emit(Resource.Error(e.localizedMessage?: "unknown error")
+                )
+            }
+        }.flowOn(Dispatchers.IO)
+
+
     }
+
+    override fun updateMovie(movieEntity: MovieEntity): Flow<Resource<Unit>> {
+        return flow {
+            emit(Resource.Loading())
+            try {
+                val data = movieDao.updateMovie(movieEntity.toEntity())
+                emit(Resource.Success(data))
+            } catch (e: Exception) {
+                emit(Resource.Error(e.localizedMessage?: "unknown error")
+                )
+            }
+        }.flowOn(Dispatchers.IO)
+
+
+    }
+
+    override fun deleteMovie(movieEntity: MovieEntity): Flow<Resource<Unit>> {
+        return flow {
+            emit(Resource.Loading())
+            try {
+                val data = movieDao.deleteMovie(movieEntity.toEntity())
+                emit(Resource.Success(data))
+            } catch (e: Exception) {
+                emit(Resource.Error(e.localizedMessage?: "unknown error")
+                )
+            }
+        }.flowOn(Dispatchers.IO)
+
+    }
+
+
 }

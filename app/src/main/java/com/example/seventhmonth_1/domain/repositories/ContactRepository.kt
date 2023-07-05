@@ -1,15 +1,21 @@
 package com.example.seventhmonth_1.domain.repositories
 
-import com.example.seventhmonth_1.data.models.ContactEntity
+import com.example.seventhmonth_1.data.models.MovieEntity
+import com.example.seventhmonth_1.domain.utils.Resource
+import kotlinx.coroutines.flow.Flow
 
 interface ContactRepository {
 
 
-     fun addContact(contactEntity: ContactEntity)
+     fun addMovie(movieEntity: MovieEntity): Flow<Resource<Unit>>
 
-     fun getContact() : List<ContactEntity>
+     fun getMovie(): Flow<Resource<List<MovieEntity>>>
 
-     fun updateContact(contactEntity: ContactEntity)
+     fun getMovieByPerfomer(): Flow<Resource<List<MovieEntity>>>
 
-     fun deleteContact(contactEntity: ContactEntity)
+     fun getMovieByDuration(): Flow<Resource<List<MovieEntity>>>
+
+     fun updateMovie(contactEntity: MovieEntity): Flow<Resource<Unit>>
+
+     fun deleteMovie(contactEntity: MovieEntity): Flow<Resource<Unit>>
 }
