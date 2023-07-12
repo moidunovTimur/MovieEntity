@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.example.seventhmonth_1.data.lokal.ContactDataBase
 import com.example.seventhmonth_1.data.lokal.MovieDao
 import com.example.seventhmonth_1.data.repositories.ContactRepositoryImpl
-import com.example.seventhmonth_1.domain.repositories.ContactRepository
+import com.example.seventhmonth_1.domain.repositories.MovieRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 
-object ContactModule {
+object MovieModule {
 
     @Singleton
     @Provides
@@ -34,7 +34,7 @@ object ContactModule {
     fun provideMovieDao (contactDataBase: ContactDataBase) = contactDataBase.MovieDao()
 
     @Provides
-    fun provideMovieRepository (movieDao: MovieDao): ContactRepository{
+    fun provideMovieRepository (movieDao: MovieDao): MovieRepository{
         return ContactRepositoryImpl(movieDao)
     }
 }

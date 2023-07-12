@@ -1,8 +1,10 @@
 package com.example.seventhmonth_1.domain.models
 
-data class Movie (
-    val quality: Int,
+import java.io.Serializable
+
+data class Movie(
+    val id: Int,
     val name: String,
-    val quantity:Int,
+    val quantity: String,
     val date: String,
-)
+) : Serializable
