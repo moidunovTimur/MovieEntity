@@ -47,7 +47,7 @@ class MoviesFragment : BaseFragment() {
         with(binding) {
             btnSave.setOnClickListener {
                 viewModel.addAllMovie(
-                    Movie(
+                   Movie(
                         id = (0..9999).random(),
                         name = etdName.text.toString(),
                         quantity = etdQuantity.text.toString(),

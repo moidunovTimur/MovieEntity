@@ -12,7 +12,7 @@ abstract class BaseFragment : Fragment() {
 
     protected fun <T> StateFlow<UiState<T>>.collectState(
         loadingState: (UiState<T>) -> Unit,
-       onSuccess: (data:T) -> Unit
+        onSuccess: (data:T) -> Unit
     ){
         viewLifecycleOwner.lifecycleScope.launch {
             this@collectState.collect {

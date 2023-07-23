@@ -14,3 +14,9 @@ dependencyResolutionManagement {
 }
 rootProject.name = "SeventhMonth_1"
 include ':app'
+include ':data'
+include ':lib'
+include ':lib2'
+include ':lib3'
+include ':domain'
+include ':presentation'

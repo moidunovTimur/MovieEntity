@@ -54,12 +54,12 @@ class DetailFragment : Fragment() {
             btnUpdate.setOnClickListener {
                 viewModel.viewModelScope.launch {
                     viewModel.updateMovie(
-                        Movie(
+                       Movie(
                             id = id,
                             name = binding.etName.text.toString(),
                             quantity = binding.etQuantity.text.toString(),
                             date = binding.etDate.text.toString()
-                    )
+                        )
                     )
                 }
                 findNavController().navigateUp()

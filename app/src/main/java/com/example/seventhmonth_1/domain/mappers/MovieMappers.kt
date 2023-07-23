@@ -1,4 +1,4 @@
-package com.example.seventhmonth_1.data.mappers
+package com.example.seventhmonth_1.domain.mappers
 
 import com.example.seventhmonth_1.data.models.MovieEntity
 import com.example.seventhmonth_1.domain.models.Movie

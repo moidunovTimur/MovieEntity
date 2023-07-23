@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">SeventhMonth_1</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name_movie">name_movie</string>
-    <string name="quality_movie">quality_movie</string>
     <string name="quantity_movie">quantity_movie</string>
     <string name="save">Save</string>
     <string name="name_movies">name_movie</string>
     <string name="date_movie">date_movie</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
-    <string name="timur">timur</string>
 </resources>

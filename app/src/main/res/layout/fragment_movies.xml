@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.fragments.movies_list.MoviesFragment">
+    tools:context="com.example.SeventhMonth_1.presentation.ui.fragments.movies_list.MoviesFragment">
 
 
     <com.google.android.material.textfield.TextInputLayout

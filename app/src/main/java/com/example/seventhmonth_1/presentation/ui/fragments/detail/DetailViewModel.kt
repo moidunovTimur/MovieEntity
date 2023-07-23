@@ -2,7 +2,6 @@ package com.example.seventhmonth_1.presentation.ui.fragments.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.seventhmonth_1.data.models.MovieEntity
 import com.example.seventhmonth_1.domain.models.Movie
 import com.example.seventhmonth_1.domain.usecases.DeleteMovieUseCase
 import com.example.seventhmonth_1.domain.usecases.UpdateMovieUseCase
