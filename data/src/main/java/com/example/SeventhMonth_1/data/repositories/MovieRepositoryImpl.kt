@@ -1,11 +1,10 @@
 package com.example.SeventhMonth_1.data.repositories
 
-import android.graphics.Movie
 import com.example.SeventhMonth_1.data.base.BaseRepository
 import com.example.SeventhMonth_1.data.lokal.MovieDao
 import com.example.SeventhMonth_1.domain.mappers.toMovie
 import com.example.SeventhMonth_1.domain.utils.Resource
-import com.example.SeventhMonth_1.repositorie.MovieRepository
+import com.example.SeventhMonth_1.domain.repositorie.MovieRepository
 import kotlinx.coroutines.flow.Flow
 
 class MovieRepositoryImpl (
@@ -21,8 +20,8 @@ class MovieRepositoryImpl (
         movieDao.getMovie().toList()
     }
 
-    override fun getMovieByPerfomer(): Flow<Resource<List<com.example.SeventhMonth_1.domain.models.Movie>>> = doRequest {
-        movieDao.getMovieByPerfomer().toList()
+    override fun getMovieByPerfumer(): Flow<Resource<List<com.example.SeventhMonth_1.domain.models.Movie>>> = doRequest {
+        movieDao.getMovieByPerfumer().toList()
     }
 
     override fun getMovieByDuration(): Flow<Resource<List<com.example.SeventhMonth_1.domain.models.Movie>>> = doRequest {

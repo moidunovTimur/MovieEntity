@@ -15,7 +15,7 @@ interface MovieDao {
     fun getMovie() : List<Movie>
 
     @Query("SELECT * FROM movies ORDER BY perfomer ASC")
-    fun getMovieByPerfomer(): List<Movie>
+    fun getMovieByPerfumer(): List<Movie>
 
     @Query("SELECT * FROM movies ORDER BY CAST(duration " + "AS INTEGER)ASC")
     fun getMovieByDuration(): List<Movie>

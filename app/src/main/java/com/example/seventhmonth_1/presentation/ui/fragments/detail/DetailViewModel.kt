@@ -2,9 +2,9 @@ package com.example.seventhmonth_1.presentation.ui.fragments.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.seventhmonth_1.domain.models.Movie
-import com.example.seventhmonth_1.domain.usecases.DeleteMovieUseCase
-import com.example.seventhmonth_1.domain.usecases.UpdateMovieUseCase
+import com.example.SeventhMonth_1.domain.models.Movie
+import com.example.SeventhMonth_1.domain.usecases.DeleteMovieUseCase
+import com.example.SeventhMonth_1.domain.usecases.UpdateMovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

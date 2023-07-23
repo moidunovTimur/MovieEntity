@@ -2,7 +2,7 @@ package com.example.seventhmonth_1.presentation.ui.Base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.seventhmonth_1.domain.utils.Resource
+import com.example.SeventhMonth_1.domain.utils.Resource
 import com.example.seventhmonth_1.presentation.utils.UiState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

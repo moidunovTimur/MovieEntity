@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import com.example.seventhmonth_1.data.models.MovieEntity
+import com.example.SeventhMonth_1.domain.models.Movie
 import com.example.seventhmonth_1.databinding.ItemMovieBinding
-import com.example.seventhmonth_1.domain.models.Movie
-import kotlin.reflect.KFunction1
+
 
 class MovieAdapter(
     private val onClick: (movie : Movie) -> Unit

@@ -2,7 +2,7 @@ package com.example.SeventhMonth_1.domain.usecases
 
 import com.example.SeventhMonth_1.domain.models.Movie
 import com.example.SeventhMonth_1.domain.utils.Resource
-import com.example.SeventhMonth_1.repositorie.MovieRepository
+import com.example.SeventhMonth_1.domain.repositorie.MovieRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
+import com.example.SeventhMonth_1.domain.models.Movie
 import com.example.seventhmonth_1.databinding.FragmentDetailBinding
-import com.example.seventhmonth_1.domain.models.Movie
 import com.example.seventhmonth_1.presentation.ui.fragments.movies_list.MoviesFragment.Companion.KEY_MOVIE
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

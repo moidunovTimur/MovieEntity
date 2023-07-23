@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.SeventhMonth_1.domain.models.Movie
 import com.example.seventhmonth_1.R
 import com.example.seventhmonth_1.databinding.FragmentMoviesBinding
-import com.example.seventhmonth_1.domain.models.Movie
 import com.example.seventhmonth_1.presentation.ui.Base.BaseFragment
 import com.example.seventhmonth_1.presentation.ui.fragments.movies_list.adapetr.MovieAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -63,7 +63,7 @@ class MoviesFragment : BaseFragment() {
              binding.progressbar.visibility = View.VISIBLE
 
               },
-             onSuccess =  { listOfMovie ->
+             onSuccess =  { listOfMovie: List<Any> ->
              binding.progressbar.visibility = View.GONE
               adapter.notifyDataSetChanged()
                  binding.rvMovie.adapter = adapter
@@ -71,6 +71,37 @@ class MoviesFragment : BaseFragment() {
 
              }
           )
+
+
+        viewModel.getMovieByPerf()
+        viewModel.getAllMovieState.collectState(
+            loadingState =  {
+                binding.progressbar.visibility = View.VISIBLE
+
+            },
+            onSuccess =  { listOfMovie: List<Any> ->
+                binding.progressbar.visibility = View.GONE
+                adapter.notifyDataSetChanged()
+                binding.rvMovie.adapter = adapter
+                println("SUCCESS_STATE->${listOfMovie.size}")
+
+            }
+        )
+
+        viewModel.getMovieDuration()
+        viewModel.getAllMovieState.collectState(
+            loadingState =  {
+                binding.progressbar.visibility = View.VISIBLE
+
+            },
+            onSuccess =  { listOfMovie: List<Any> ->
+                binding.progressbar.visibility = View.GONE
+                adapter.notifyDataSetChanged()
+                binding.rvMovie.adapter = adapter
+                println("SUCCESS_STATE->${listOfMovie.size}")
+
+            }
+        )
     }
 
     companion object {
